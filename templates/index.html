@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Sauna App</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <header>
+        <a href="{{ url_for('index') }}">サウナ施設一覧</a>
+    </header>
+
     <h1>サウナ施設一覧</h1>
 
     <ul>
-        {% for sauna in saunas %}
-            <li>{{sauna.name}}({{sauna.area}})</li>
-        {% endfor %}    
+        {% for facility in facilities %}
+            <li>
+                <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
+                    {{ facility.name }}
+                </a>
+                （{{ facility.prefecture }}）
+            </li>
+        {% endfor %}
     </ul>
 </body>
 </html>

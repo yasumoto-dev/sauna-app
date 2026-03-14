@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ facility.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('index') }}">サウナ施設一覧</a>
+    </header>
+
+    <h1>{{ facility.name }}</h1>
+
+    <p>都道府県: {{ facility.prefecture }}</p>
+    <p>サウナ室温度: {{ facility.sauna_temp }}℃</p>
+    <p>水風呂温度: {{ facility.water_temp }}℃</p>
+
+    <h2>コメント投稿</h2>
+    <form action="{{ url_for('add_review', facility_id=facility.id) }}" method="post">
+        <div>
+            <label for="user_name">名前</label>
+            <input type="text" id="user_name" name="user_name" required>
+        </div>
+        <div>
+            <label for="comment">コメント</label>
+            <textarea id="comment" name="comment" required></textarea>
+        </div>
+        <button type="submit">投稿する</button>
+    </form>
+
+    <h2>コメント一覧</h2>
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <strong>{{ review.user_name }}</strong>：{{ review.comment }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>まだコメントはありません。</p>
+    {% endif %}
+</body>
+</html>
