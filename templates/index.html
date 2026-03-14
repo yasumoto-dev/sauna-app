@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Sauna App</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <h1>サウナ施設一覧</h1>
+
+    <ul>
+        {% for sauna in saunas %}
+            <li>{{sauna.name}}({{sauna.area}})</li>
+        {% endfor %}    
+    </ul>
+</body>
+</html>
