@@ -15,7 +15,7 @@ Base = declarative_base()
 class Facility(Base):
     __tablename__ = "facilities"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, unique=True)
     name = Column(String, nullable=False)
     prefecture = Column(String, nullable=False)
     sauna_temp = Column(Integer, nullable=False)

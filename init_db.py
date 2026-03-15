@@ -13,10 +13,13 @@ facilities = [
 
 ]
 
-#追加内容をDBに登録
-session.add_all(facilities)
-session.commit()
+#同施設の登録防止
+for data in facilities:
+    existing = session.query(Facility).filter_by(name=data.name).first()
+    if existing is None:
+        session.add(data)
 
+session.commit()
 session.close()
 
 print("データベースを初期化しました。")

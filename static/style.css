@@ -1,37 +1,241 @@
-body {
-    font-family: sans-serif;
-    margin: 40px;
-    line-height: 1.6;
-}
+@charset "UTF-8";
 
-header {
-    margin-bottom: 24px;
-    text-align: center;
+/* =========================
+   Base
+========================= */
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f4ed;
 }
 
 a {
     text-decoration: none;
-    color: #0066cc;
+    color: #333;
 }
 
-ul {
-    padding-left: 20px;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-form div {
-    margin-bottom: 12px;
+/* =========================
+   Header
+========================= */
+.header {
+    background: #b8860b;
+    padding: 20px 0 16px;
+    text-align: center;
 }
 
-input, textarea {
-    width: 300px;
-    padding: 8px;
+.logo {
+    margin-bottom: 16px;
 }
 
-textarea {
-    height: 100px;
+.logo img {
+    width: 60px;
+    margin: 0 auto 8px;
 }
 
-button {
+.logo p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.header ul {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header ul li a {
+    display: inline-block;
     padding: 8px 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header ul li a:hover {
+    opacity: 0.8;
+}
+
+/* =========================
+   Facility List Page
+========================= */
+.list {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.list h1 {
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+.list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    background-color: #fff;
+    margin-bottom: 12px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.list li a {
+    font-weight: bold;
+    color: #8b5e00;
+}
+
+.list li a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Facility Detail
+========================= */
+.facility_info {
+    max-width: 700px;
+    margin: 40px auto 24px;
+    padding: 24px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.facility_info h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #8b5e00;
+}
+
+.facility_info p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* =========================
+   Comment Area Common
+========================= */
+.comment_post,
+.comment_view {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Comment Post
+========================= */
+.comment_post {
+    margin-bottom: 24px;
+}
+
+.comment_post h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 22px;
+    color: #8b5e00;
+}
+
+.comment_post form div {
+    margin-bottom: 16px;
+}
+
+.comment_post label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.comment_post input,
+.comment_post textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.comment_post textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.comment_post button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b8860b;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.comment_post button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   Comment View
+========================= */
+.comment_view {
+    margin-bottom: 40px;
+}
+
+.comment_view h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 22px;
+    color: #8b5e00;
+}
+
+.comment_view ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment_view li {
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background-color: #f9f7f2;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.comment_view strong {
+    color: #8b5e00;
+}
+
+.comment_view p {
+    margin: 0;
+    text-align: center;
+    color: #666;
 }

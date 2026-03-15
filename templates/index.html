@@ -1,27 +1,40 @@
 <!-- 施設情報一覧テンプレート -->
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Sauna App</title>
+    <meta name="description" content="人気のサウナ施設情報が確認できるwebページです。">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <header>
-        <a href="{{ url_for('index') }}">サウナ施設一覧</a>
-    </header>
+    <div class="header">
+        <div class="logo">
+            <img src="{{url_for('static', filename='images/ofuro_sauna_hat.png')}}" alt="comming soon">
+            <p>ととのい</p>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">サウナ施設一覧</a></li>
+        </ul>
+    </div>
 
-    <h1>サウナ施設一覧</h1>
+    <div class="list">
+        <h1>サウナ施設一覧</h1>
 
-    <ul>
-        {% for facility in facilities %}
-            <li>
-                <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
-                    {{ facility.name }}
-                </a>
-                （{{ facility.prefecture }}）
-            </li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for facility in facilities %}
+                <li>
+                    <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
+                        {{ facility.name }}
+                    </a>
+                    （{{ facility.prefecture }}）
+                </li>
+            {% endfor %}
+        </ul>
+    </div>    
 </body>
 </html>
