@@ -1,3 +1,4 @@
+<!-- 施設詳細ページ -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,7 +35,7 @@
         <ul>
             {% for review in reviews %}
                 <li>
-                    <strong>{{ review.user_name }}</strong>：{{ review.comment }}
+                    <strong>{{ review.user_name }}</strong> : {{ review.comment }}
                 </li>
             {% endfor %}
         </ul>

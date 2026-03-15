@@ -1,3 +1,4 @@
+#sqalchemyを使ったDB設計
 from sqlalchemy import create_engine,Column,Integer,String,ForeignKey,DateTime
 from sqlalchemy.orm import declarative_base,relationship,sessionmaker
 from datetime import datetime
@@ -7,9 +8,10 @@ DATABASE_URL = "sqlite:///sauna.db"
 engine = create_engine(DATABASE_URL,echo=True)
 SessionLocal = sessionmaker(bind=engine)
 
+#モデルクラスの親クラス
 Base = declarative_base()
 
-
+#親クラスを継承
 class Facility(Base):
     __tablename__ = "facilities"
 
