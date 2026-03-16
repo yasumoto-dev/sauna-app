@@ -6,6 +6,11 @@ html,body {
     width: 100%;
     overflow-x: hidden;
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 /* =========================
    Base
@@ -36,6 +41,7 @@ img {
     background: #b8860b;
     padding: 20px 0 16px;
     text-align: center;
+    width: 100%;
 }
 
 .logo {
