@@ -1,9 +1,14 @@
 #sqalchemyを使ったDB設計
-from sqlalchemy import create_engine,Column,Integer,String,ForeignKey,DateTime
-from sqlalchemy.orm import declarative_base,relationship,sessionmaker
+import os
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime
+from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from datetime import datetime
 
-DATABASE_URL = "sqlite:///sauna.db"
+#Neon(PostgreSQL)に接続
+DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite:///sauna.db")
+
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 engine = create_engine(DATABASE_URL,echo=True)
 SessionLocal = sessionmaker(bind=engine)
