@@ -86,5 +86,25 @@ def add_review(facility_id):
     return redirect(url_for("facility_detail", facility_id=facility_id))
 
 
+#コメント削除
+@app.route("/review/<int:review_id>/delete", methods=["Post"])
+def delete_comment(review_id):
+    session = SessionLocal()
+
+    review = session.query(Review).filter(Review.id == review_id).first()
+
+    if not review:
+        session.close()
+        abort(404)
+
+    facility_id = review.facility_id
+    
+    session.delete(review)
+    session.commit()
+    session.close()    
+
+    return redirect(url_for("facility_detail", facility_id=facility_id))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
