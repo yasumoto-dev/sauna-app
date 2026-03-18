@@ -1,5 +1,5 @@
 #webアプリ本体の作成
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort
 from models import SessionLocal, Facility, Review
 
 #Flaskアプリ作成
