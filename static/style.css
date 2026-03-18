@@ -189,7 +189,6 @@ img {
     font-size: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-sizing: border-box;
 }
 
 .comment_post textarea {
@@ -235,11 +234,25 @@ img {
 }
 
 .comment_view li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
     padding: 14px 16px;
     margin-bottom: 12px;
     background-color: #f9f7f2;
     border-radius: 8px;
     text-align: left;
+}
+
+.comment-text {
+    flex: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.comment_view form {
+    margin: 0 0 0 auto;
+    flex-shrink: 0;
 }
 
 .comment_view strong {
@@ -250,4 +263,19 @@ img {
     margin: 0;
     text-align: center;
     color: #666;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 0.9;
 }

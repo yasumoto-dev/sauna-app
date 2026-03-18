@@ -55,7 +55,7 @@
                         <strong>{{ review.user_name }}</strong> : {{ review.comment }}
                         
                         <form action="{{url_for('delete_comment', review_id=review.id)}}" method="post" style="display:inline;">
-                            <button type="submit">削除</button>
+                            <button type="submit" class="delete-btn">削除</button>
                         </form>    
                     </li>
                 {% endfor %}
