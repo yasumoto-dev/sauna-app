@@ -33,7 +33,7 @@
 
     <div class="comment_post">
         <h2>コメント投稿</h2>
-        <form action="{{ url_for('add_review', facility_id=facility.id) }}" method="post">
+        <form id="reviewForm" action="{{ url_for('add_review', facility_id=facility.id) }}" method="post">
             <div>
                 <label for="user_name">名前</label>
                 <input type="text" id="user_name" name="user_name" required>
@@ -43,7 +43,7 @@
                 <textarea id="comment" name="comment" required></textarea>
             </div>
 
-            <button type="submit">投稿する</button>
+            <button type="submit" id="submitButton">投稿する</button>
         </form>
     </div>
 
