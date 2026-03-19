@@ -87,7 +87,7 @@ def add_review(facility_id):
 
 
 #コメント削除
-@app.route("/review/<int:review_id>/delete", methods=["Post"])
+@app.route("/review/<int:review_id>/delete", methods=["POST"])
 def delete_comment(review_id):
     session = SessionLocal()
 
