@@ -82,7 +82,7 @@ img {
 }
 
 /* =========================
-   facility-list
+   Facility List
 ========================= */
 .facility-list {
     max-width: 800px;
@@ -167,6 +167,15 @@ img {
 }
 
 .facility-list-body li a:hover {
+    text-decoration: underline;
+}
+
+.facility-list-body a {
+    font-weight: bold;
+    color: #b98500;
+}
+
+.facility-list-body a:hover {
     text-decoration: underline;
 }
 
