@@ -23,31 +23,38 @@
         </ul>
     </div>
 
-    <div class="facility_list">
-        {% if search %}
-            <h1>「{{search}}の検索結果」</h1>
-        {% else %}
-            <h1>サウナ施設一覧</h1>
-        {% endif %}
-        
-        <!-- 検索機能 -->
-        <div class="search_facility">
+    <div class="facility-list">
+        <div class="facility-list-header">
+            {% if search %}
+                <h1>「{{search}}の検索結果」</h1>
+            {% else %}
+                <h1>サウナ施設一覧</h1>
+            {% endif %}
+        </div>
+
+        <div class="facility-search">
             <form action="{{url_for('index')}}" method="get">
                 <input type="text" name="search" placeholder="施設名で検索">
                 <button type="submit">検索</button>
             </form>
         </div>
-
-        <ul>
-            {% for facility in facilities %}
-                <li>
-                    <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
-                        {{ facility.name }}
-                    </a>
-                        ({{ facility.prefecture }})
-                </li>
-            {% endfor %}
-        </ul>
+        
+        <div class="facility-list-body">
+            {% if facilities %}
+                <ul>
+                    {% for facility in facilities %}
+                        <li>
+                            <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
+                                 {{ facility.name }}
+                            </a>
+                                ({{ facility.prefecture }})
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>該当するサウナ施設は見つかりませんでした。</p>
+            {% endif %}
+        </div>
     </div>    
 </body>
 </html>

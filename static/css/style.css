@@ -82,34 +82,78 @@ img {
 }
 
 /* =========================
-   Search function
+   facility-list
 ========================= */
-.search_facility{
-    margin-bottom: 20px;
-}
-
-/* =========================
-   Facility List Page
-========================= */
-.facility_list {
+.facility-list {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
     text-align: center;
 }
 
-.facility_list h1 {
+/* facility-list-header */
+.facility-list-header h1 {
     margin-bottom: 24px;
     font-size: 28px;
 }
 
-.facility_list ul {
+/* facility-search */
+.facility-search {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 15px;
+}
+
+.facility-search form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border: 1px solid #d49c02;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.facility-search input {
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+    padding: 0 16px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    background-color: transparent;
+}
+
+.facility-search input::placeholder {
+    color: #98948b;
+}
+
+.facility-search button {
+    flex-shrink: 0;
+    height: 44px;
+    padding: 0 18px;
+    border: none;
+    background-color: #d49c02;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.facility-search button:hover {
+    background-color: #b98500;
+}
+
+/* facility-list-body */
+.facility-list-body ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.facility_list li {
+.facility-list-body li {
     background-color: #fff;
     margin-bottom: 12px;
     padding: 16px 20px;
@@ -117,19 +161,19 @@ img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.facility_list li a {
+.facility-list-body li a {
     font-weight: bold;
     color: #8b5e00;
 }
 
-.facility_list li a:hover {
+.facility-list-body li a:hover {
     text-decoration: underline;
 }
 
 /* =========================
    Facility Detail
 ========================= */
-.facility_info {
+.facility-info {
     max-width: 700px;
     margin: 40px auto 24px;
     padding: 24px 20px;
@@ -139,14 +183,14 @@ img {
     text-align: center;
 }
 
-.facility_info h1 {
+.facility-info h1 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 28px;
     color: #8b5e00;
 }
 
-.facility_info p {
+.facility-info p {
     margin: 8px 0;
     font-size: 16px;
 }
@@ -154,8 +198,8 @@ img {
 /* =========================
    Comment Area Common
 ========================= */
-.comment_post,
-.comment_view {
+.comment-post,
+.comment-view {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -168,11 +212,11 @@ img {
 /* =========================
    Comment Post
 ========================= */
-.comment_post {
+.comment-post {
     margin-bottom: 24px;
 }
 
-.comment_post h2 {
+.comment-post h2 {
     margin-top: 0;
     margin-bottom: 16px;
     text-align: center;
@@ -180,18 +224,18 @@ img {
     color: #8b5e00;
 }
 
-.comment_post form div {
+.comment-post form div {
     margin-bottom: 16px;
 }
 
-.comment_post label {
+.comment-post label {
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
 }
 
-.comment_post input,
-.comment_post textarea {
+.comment-post input,
+.comment-post textarea {
     width: 100%;
     padding: 10px 12px;
     font-size: 15px;
@@ -199,12 +243,12 @@ img {
     border-radius: 8px;
 }
 
-.comment_post textarea {
+.comment-post textarea {
     min-height: 100px;
     resize: vertical;
 }
 
-.comment_post button {
+.comment-post button {
     display: inline-block;
     padding: 10px 20px;
     border: none;
@@ -216,18 +260,18 @@ img {
     cursor: pointer;
 }
 
-.comment_post button:hover {
+.comment-post button:hover {
     opacity: 0.9;
 }
 
 /* =========================
    Comment View
 ========================= */
-.comment_view {
+.comment-view {
     margin-bottom: 40px;
 }
 
-.comment_view h2 {
+.comment-view h2 {
     margin-top: 0;
     margin-bottom: 16px;
     text-align: center;
@@ -235,13 +279,13 @@ img {
     color: #8b5e00;
 }
 
-.comment_view ul {
+.comment-view ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.comment_view li {
+.comment-view li {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -258,16 +302,16 @@ img {
     overflow-wrap: break-word;
 }
 
-.comment_view form {
+.comment-view form {
     margin: 0 0 0 auto;
     flex-shrink: 0;
 }
 
-.comment_view strong {
+.comment-view strong {
     color: #8b5e00;
 }
 
-.comment_view p {
+.comment-view p {
     margin: 0;
     text-align: center;
     color: #666;

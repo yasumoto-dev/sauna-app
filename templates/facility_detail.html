@@ -23,7 +23,7 @@
         </ul>
     </div>
 
-    <div class="facility_info">
+    <div class="facility-info">
         <h1>{{ facility.name }}</h1>
 
         <p>都道府県: {{ facility.prefecture }}</p>
@@ -31,7 +31,7 @@
         <p>水風呂温度: {{ facility.water_temp }}℃</p>
     </div>
 
-    <div class="comment_post">
+    <div class="comment-post">
         <h2>コメント投稿</h2>
         <form id="reviewForm" action="{{ url_for('add_review', facility_id=facility.id) }}" method="post">
             <div>
@@ -47,7 +47,7 @@
         </form>
     </div>
 
-    <div class="comment_view">
+    <div class="comment-view">
         <h2>コメント一覧</h2>
         {% if reviews %}
             <ul>
