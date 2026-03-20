@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
         form.dataset.submitted = "true"
 
         if (submitButton) {
-            submitButton.disable = true;
+            submitButton.disabled = true;
             submitButton.textContent = "送信中…";
         }
     });
