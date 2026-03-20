@@ -25,14 +25,14 @@
 
     <div class="list">
         <h1>サウナ施設一覧</h1>
-
+        
         <ul>
             {% for facility in facilities %}
                 <li>
                     <a href="{{ url_for('facility_detail', facility_id=facility.id) }}">
                         {{ facility.name }}
                     </a>
-                    （{{ facility.prefecture }}）
+                        ({{ facility.prefecture }})
                 </li>
             {% endfor %}
         </ul>

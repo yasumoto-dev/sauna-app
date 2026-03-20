@@ -4,7 +4,7 @@
 
 /**
  * Wrapping everything in an anonymous layer ensures that selectors
- * in UA+ have the lowest specificty or the highest when using
+ * in UA+ have the lowest specificity or the highest when using
  * !important.
  */
 @layer {
@@ -56,16 +56,6 @@
    */
 	html {
 		line-height: 1.5;
-	}
-
-	/**
-   * Add scrollbar gutter
-   *
-   * Prevent the page from “jumping” when switching from a long to a short page.
-   *
-   */
-	html {
-		scrollbar-gutter: stable;
 	}
 
 	/**
@@ -181,16 +171,6 @@
 	textarea {
 		font-family: inherit;
 		font-size: inherit;
-	}
-
-	/**
-   * Normalize search input styles
-   *  
-   * Remove the rounded corners of search inputs on macOS and IOS 
-   * and normalize the background color
-   */
-	[type="search"] {
-		-webkit-appearance: textfield;
 	}
 
 	/* iOS only */
