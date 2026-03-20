@@ -82,6 +82,13 @@ img {
 }
 
 /* =========================
+   Search function
+========================= */
+.search_facility{
+    margin-bottom: 20px;
+}
+
+/* =========================
    Facility List Page
 ========================= */
 .list {

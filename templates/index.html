@@ -26,6 +26,14 @@
     <div class="list">
         <h1>サウナ施設一覧</h1>
         
+        <!-- 検索機能 -->
+        <div class="search_facility">
+            <form action="{{url_for('index')}}" method="get">
+                <input type="text" name="search" placeholder="施設名で検索">
+                <button type="submit">検索</button>
+            </form>
+        </div>
+
         <ul>
             {% for facility in facilities %}
                 <li>

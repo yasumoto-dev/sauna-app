@@ -6,12 +6,20 @@ from models import SessionLocal, Facility, Review
 app = Flask(__name__)
 
 
-#施設一覧表示
+#施設一覧表示(検索機能付き)
 @app.route("/")
 def index():
+    search = request.args.get("search", "")
     session = SessionLocal()
-    facilities = session.query(Facility).all()
+
+    query = session.query(Facility)
+
+    if search:
+        query = query.filter(Facility.name.contains(search))
+
+    facilities = query.all()
     session.close()
+
     return render_template("index.html", facilities=facilities)
 
 

@@ -30,7 +30,7 @@
             <p style="color: red;">{{ error }}</p>
         {% endif %}
 
-        <form action="{{ url_for('create_facility') }}" method="post"> <!-- actionで送信先 -->
+        <form action="{{ url_for('create_facility') }}" method="post">
             <div>
                 <label for="name">施設名</label>
                 <input type="text" id="name" name="name" required>
