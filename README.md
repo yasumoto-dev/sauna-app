@@ -52,7 +52,7 @@ sauna-app/
 
 ## 💻公開URL
 
-https://sauna-app-8rdg.onrender.com
+https://sauna-app-wx2p.onrender.com
 
 ⚠️Renderの無料枠を使用しているため、サイトの起動に時間がかかる場合があります
 
